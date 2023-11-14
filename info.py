@@ -35,6 +35,10 @@ DATABASE_URI = environ.get('DATABASE_URI', "")
 DATABASE_NAME = environ.get('DATABASE_NAME', "")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
+#for fun
+PM_AUTO_DELETE_TIME = environ.get("PM_AUTO_DELETE_TIME", "600")
+PM_AUTO_DELETE = environ.get("PM_AUTO_DELETE", True)
+
 # Others
 LOG_CHANNEL = int(environ.get('LOG_CHANNEL', ))
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', '')
