@@ -42,15 +42,16 @@ async def start(client, message):
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
     if len(message.command) != 2:
         buttons = [[
-            InlineKeyboardButton('⤬ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ⤬', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+            InlineKeyboardButton('➕ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ➕', url=f"https://t.me/{temp.U_NAME}?startgroup=true")
             ],[
-            InlineKeyboardButton('✇ Mᴀɪɴ Cʜᴀɴɴᴇʟ', url=CHNL_LNK),
+            InlineKeyboardButton('💥 Mᴀɪɴ Cʜᴀɴɴᴇʟ 💥', url='https://t.me/Sky_MoviesZ_HD'),
+            InlineKeyboardButton('🔎 Mᴏᴠɪᴇꜱ Gʀᴏᴜᴘ 🔍', url='https://t.me/Movies_Group_Linkss')
             ],[
-            InlineKeyboardButton('⌬ Uᴘᴅᴀᴛᴇꜱ Cʜᴀɴɴᴇʟ', url=GRP_LNK)
+            InlineKeyboardButton('😅 Sᴏᴜʀᴄᴇ Cᴏᴅᴇ 😊', callback_data='sources')
             ],[
-            InlineKeyboardButton('✪ Mᴏᴠɪᴇꜱ Gʀᴏᴜᴘ', url=f'https://telegram.me/Movies_Group_Linkss')
+            InlineKeyboardButton('💌 Aʙᴏᴜᴛ Aɴᴅ Iɴғᴏ 💌', callback_data= 'about')
             ],[
-            InlineKeyboardButton('⍟ Aʙᴏᴜᴛ', callback_data='about'),
+            InlineKeyboardButton('❌ Cʟᴏꜱᴇ ❌', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -90,15 +91,16 @@ async def start(client, message):
         return
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
         buttons = [[
-            InlineKeyboardButton('⤬ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ⤬', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+            InlineKeyboardButton('➕ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ➕', url=f"https://t.me/{temp.U_NAME}?startgroup=true")
             ],[
-            InlineKeyboardButton('✇ Mᴀɪɴ Cʜᴀɴɴᴇʟ', url=CHNL_LNK),
+            InlineKeyboardButton('💥 Mᴀɪɴ Cʜᴀɴɴᴇʟ 💥', url='https://t.me/Sky_MoviesZ_HD'),
+            InlineKeyboardButton('🔎 Mᴏᴠɪᴇꜱ Gʀᴏᴜᴘ 🔍', url='https://t.me/Movies_Group_Linkss')
             ],[
-            InlineKeyboardButton('⌬ Uᴘᴅᴀᴛᴇꜱ Cʜᴀɴɴᴇʟ', url=GRP_LNK)
+            InlineKeyboardButton('😅 Sᴏᴜʀᴄᴇ Cᴏᴅᴇ 😊', callback_data='sources')
             ],[
-            InlineKeyboardButton('✪ Mᴏᴠɪᴇꜱ Gʀᴏᴜᴘ', url=f'https://telegram.me/Movies_Group_Linkss')
+            InlineKeyboardButton('💌 Aʙᴏᴜᴛ Aɴᴅ Iɴғᴏ 💌', callback_data= 'about')
             ],[
-            InlineKeyboardButton('⍟ Aʙᴏᴜᴛ', callback_data='about'),
+            InlineKeyboardButton('❌ Cʟᴏꜱᴇ ❌', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -372,7 +374,7 @@ async def delete_all_index(bot, message):
 @Client.on_callback_query(filters.regex(r'^autofilter_delete'))
 async def delete_all_index_confirm(bot, message):
     await Media.collection.drop()
-    await message.answer('ᴀᴍᴀᴢɪɴɢ ᴄᴏᴅᴇ ғʀᴏᴍ TᴀᴍɪʟBᴏᴛsZ')
+    await message.answer('ᴀᴍᴀᴢɪɴɢ ᴄᴏᴅᴇ ғʀᴏᴍ SkyMovies)
     await message.message.edit('sᴜᴄᴄᴇssғᴜʟʟ ᴅᴇʟᴇᴛᴇᴅ ɪɴᴅᴇxᴇᴅ ғɪʟᴇs')
 
 
