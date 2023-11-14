@@ -8,7 +8,7 @@ from pyrogram.errors import ChatAdminRequired, FloodWait
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from database.ia_filterdb import Media, get_file_details, unpack_new_file_id
 from database.users_chats_db import db
-from info import CHANNELS, ADMINS, AUTH_CHANNEL, LOG_CHANNEL, PICS, BATCH_FILE_CAPTION, CUSTOM_FILE_CAPTION, PROTECT_CONTENT
+from info import CHANNELS, ADMINS, AUTH_CHANNEL, LOG_CHANNEL, PICS, BATCH_FILE_CAPTION, CUSTOM_FILE_CAPTION, PROTECT_CONTENT, PM_AUTO_DELETE, PM_AUTO_DELETE_TIME
 from utils import get_settings, get_size, is_subscribed, save_group_settings, temp
 from database.connections_mdb import active_connection
 import re
@@ -257,14 +257,21 @@ async def start(client, message):
             f_caption=f_caption
     if f_caption is None:
         f_caption = f"{files.file_name}"
-    await client.send_cached_media(
+    master = await client.send_cached_media(
         chat_id=message.from_user.id,
         file_id=file_id,
         caption=f_caption,
         reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton('🚸 ᴅᴇʟᴇᴛᴇ', callback_data='close_data') ] ] ),
         protect_content=True if pre == 'filep' else False,
-        )
-                    
+    )
+    if PM_AUTO_DELETE:
+        if PM_AUTO_DELETE_TIME == 0:
+            return
+        await message.reply(f"<b>𝐅𝐢𝐥𝐞𝐬 𝐖𝐢𝐥𝐥 𝐁𝐞 𝐃𝐞𝐥𝐞𝐭𝐞𝐝 𝐀𝐟𝐭𝐞𝐫 2 𝐌𝐢𝐧\n\n❗️𝗙𝗼𝗿𝘄𝗮𝗿𝗱 𝗧𝗼 𝗦𝗮𝘃𝗲𝗱 𝗠𝗲𝘀𝘀𝗮𝗴𝗲 𝗔𝗻𝗱 𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱❗️</b>")
+        await asyncio.sleep(120)
+        await master.delete()
+    else:
+        pass                  
 
 @Client.on_message(filters.command('channel') & filters.user(ADMINS))
 async def channel_info(bot, message):
