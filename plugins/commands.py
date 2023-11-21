@@ -23,7 +23,7 @@ async def start(client, message):
     if message.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
         buttons = [
             [
-                InlineKeyboardButton('🤖 Uᴘᴅᴀᴛᴇs 🤖', url='https://t.me/Sky_MoviesZ_HD')
+                InlineKeyboardButton('🤖 Uᴘᴅᴀᴛᴇs 🤖', url='https://t.me/ags_moviz')
             ],
             [
                 InlineKeyboardButton('ℹ️ Hᴇʟᴘ ℹ️', url=f"https://t.me/{temp.U_NAME}?start=help")
@@ -44,8 +44,8 @@ async def start(client, message):
         buttons = [[
             InlineKeyboardButton('➕ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ➕', url=f"https://t.me/{temp.U_NAME}?startgroup=true")
             ],[
-            InlineKeyboardButton('💥 Mᴀɪɴ Cʜᴀɴɴᴇʟ 💥', url='https://t.me/Sky_MoviesZ_HD'),
-            InlineKeyboardButton('🔎 Mᴏᴠɪᴇꜱ Gʀᴏᴜᴘ 🔍', url='https://t.me/Movies_Group_Linkss')
+            InlineKeyboardButton('💥 Mᴀɪɴ Cʜᴀɴɴᴇʟ 💥', url='https://t.me/ags_moviz'),
+            InlineKeyboardButton('🔎 Mᴏᴠɪᴇꜱ Gʀᴏᴜᴘ 🔍', url='https://t.me/ags_movie')
             ],[
             InlineKeyboardButton('😅 Sᴏᴜʀᴄᴇ Cᴏᴅᴇ 😊', callback_data='sources')
             ],[
@@ -93,8 +93,8 @@ async def start(client, message):
         buttons = [[
             InlineKeyboardButton('➕ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ➕', url=f"https://t.me/{temp.U_NAME}?startgroup=true")
             ],[
-            InlineKeyboardButton('💥 Mᴀɪɴ Cʜᴀɴɴᴇʟ 💥', url='https://t.me/Sky_MoviesZ_HD'),
-            InlineKeyboardButton('🔎 Mᴏᴠɪᴇꜱ Gʀᴏᴜᴘ 🔍', url='https://t.me/Movies_Group_Linkss')
+            InlineKeyboardButton('💥 Mᴀɪɴ Cʜᴀɴɴᴇʟ 💥', url='https://t.me/ags_moviz'),
+            InlineKeyboardButton('🔎 Mᴏᴠɪᴇꜱ Gʀᴏᴜᴘ 🔍', url='https://t.me/ags_movie')
             ],[
             InlineKeyboardButton('😅 Sᴏᴜʀᴄᴇ Cᴏᴅᴇ 😊', callback_data='sources')
             ],[
