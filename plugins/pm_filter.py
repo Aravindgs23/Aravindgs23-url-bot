@@ -199,7 +199,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             title = query.message.chat.title
 
         else:
-            return await query.answer(' ˆ°• Sky Movies •°ˆ ')
+            return await query.answer(' ˆ°• Ags Movies •°ˆ ')
 
         st = await client.get_chat_member(grp_id, userid)
         if (st.status == enums.ChatMemberStatus.OWNER) or (str(userid) in ADMINS):
@@ -253,7 +253,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=keyboard,
             parse_mode=enums.ParseMode.MARKDOWN
         )
-        return await query.answer(' ˆ°• Sky Movies •°ˆ ')
+        return await query.answer(' ˆ°• Ags Movies •°ˆ ')
     elif "connectcb" in query.data:
         await query.answer()
 
@@ -297,7 +297,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 f"Sᴏᴍᴇ Eʀʀᴏʀ Oᴄᴄᴜʀᴇᴅ!!",
                 parse_mode=enums.ParseMode.MARKDOWN
             )
-        return await query.answer(' ˆ°• Sky Movies •°ˆ ')
+        return await query.answer(' ˆ°• Ags Movies •°ˆ ')
     elif "deletecb" in query.data:
         await query.answer()
 
@@ -315,7 +315,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 f"Sᴏᴍᴇ Eʀʀᴏʀ Oᴄᴄᴜʀᴇᴅ!!",
                 parse_mode=enums.ParseMode.MARKDOWN
             )
-        return await query.answer(' ˆ°• Sky Movies •°ˆ ')
+        return await query.answer(' ˆ°• Ags Movies •°ˆ ')
     elif query.data == "backcb":
         await query.answer()
 
@@ -326,7 +326,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await query.message.edit_text(
                 "There are no active connections!! Connect to some groups first.",
             )
-            return await query.answer(' ˆ°• Sky Movies •°ˆ ')
+            return await query.answer(' ˆ°• Ags Movies •°ˆ ')
         buttons = []
         for groupid in groupids:
             try:
@@ -733,10 +733,10 @@ async def auto_filter(client, msg, spoll=False):
             search = message.text
             files, offset, total_results = await get_search_results(search.lower(), offset=0, filter=True)
             if not files:
-                await client.send_message(file_req_channel,f"-🦋 #REQUESTED_FILE 🦋-\n\n📝Fɪʟᴇ Nᴀᴍᴇ :{search}\n\nRᴇǫᴜᴇsᴛᴇᴅ Bʏ: {message.from_user.first_name}\n\n Usᴇʀ Iᴅ :{message.from_user.id}\n\n🗃Cᴏᴅᴇᴅᴇᴅ Bʏ  @Sky_MoviesZ_HD",
+                await client.send_message(file_req_channel,f"-🦋 #REQUESTED_FILE 🦋-\n\n📝Fɪʟᴇ Nᴀᴍᴇ :{search}\n\nRᴇǫᴜᴇsᴛᴇᴅ Bʏ: {message.from_user.first_name}\n\n Usᴇʀ Iᴅ :{message.from_user.id}\n\n🗃Cᴏᴅᴇᴅᴇᴅ Bʏ  @ags_moviz",
                                                                                          reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔺 Fɪʟᴇ Uᴩʟᴏᴀᴅᴇᴅ Sᴜᴄᴄᴇssғᴜʟʟʏ 🔺", callback_data="close_data")]]))
-                l = await message.reply_text(text=f"△ Hᴇʏ Fʀɪᴇɴᴅ {message.from_user.first_name} 😎,\n\nʏᴏᴜʀ ʀᴇQᴜᴇꜱᴛ ʜᴀꜱ ʙᴇᴇɴ ꜱᴇɴᴛ ᴛᴏ ᴏᴜʀ ᴀᴅᴍɪɴ'ꜱ ᴅᴀꜱʜʙᴏᴀʀᴅ !\n\nᴘʟᴇᴀꜱᴇ ᴋᴇᴇᴘ ꜱᴏᴍᴇ ᴘᴀᴛɪᴇɴᴄᴇ !\nᴛʜᴇʏ ᴡɪʟʟ ᴜᴘʟᴏᴀᴅ ɪᴛ ᴀꜱ ꜱᴏᴏɴ ᴀꜱ ᴘᴏꜱꜱɪʙʟᴇ.\n\n➟ 📝Cᴏɴᴛᴇɴᴛ Nᴀᴍᴇ : {search}\n\n➟ 👮 Rᴇǫᴜᴇsᴛᴇᴅ Bʏ Yᴏᴜ : {message.from_user.first_name}\n\n༺ @Sky_MoviesZ_HD༻\n\n🦋・‥☆Sᴜᴩᴩᴏʀᴛ Oᴜʀ Cʜᴀɴɴᴇʟ ☆‥・🦋\n╰┈➤・☆ @Sky_Movie_Link ☆",
-                                                                                                       reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("━ • │▌║  Aᴅᴅ Mᴇ Tᴏ Uʀ Gʀᴏᴜᴩ  ║▌│ • ━", url=f'http://t.me/{temp.U_NAME}?startgroup=true')],[InlineKeyboardButton("✪ Sky Movies ✪", url="https://t.me/Sky_MoviesZ_HD"), InlineKeyboardButton("✪ Sᴜᴩᴩᴏʀᴛ Gʀᴏᴜᴩ ✪", url="https://t.me/Sky_Movie_Link"), InlineKeyboardButton("✪ Rᴇᴩᴏ ✪", url="https://t.me/Sky_Moviess_HD_Bot")],[InlineKeyboardButton("╚»♥️Dᴇʟᴇᴛᴇ Tʜɪs Mᴇssᴀɢᴇ ♥️«╝", callback_data="close_data")]]))
+                l = await message.reply_text(text=f"△ Hᴇʏ Fʀɪᴇɴᴅ {message.from_user.first_name} 😎,\n\nʏᴏᴜʀ ʀᴇQᴜᴇꜱᴛ ʜᴀꜱ ʙᴇᴇɴ ꜱᴇɴᴛ ᴛᴏ ᴏᴜʀ ᴀᴅᴍɪɴ'ꜱ ᴅᴀꜱʜʙᴏᴀʀᴅ !\n\nᴘʟᴇᴀꜱᴇ ᴋᴇᴇᴘ ꜱᴏᴍᴇ ᴘᴀᴛɪᴇɴᴄᴇ !\nᴛʜᴇʏ ᴡɪʟʟ ᴜᴘʟᴏᴀᴅ ɪᴛ ᴀꜱ ꜱᴏᴏɴ ᴀꜱ ᴘᴏꜱꜱɪʙʟᴇ.\n\n➟ 📝Cᴏɴᴛᴇɴᴛ Nᴀᴍᴇ : {search}\n\n➟ 👮 Rᴇǫᴜᴇsᴛᴇᴅ Bʏ Yᴏᴜ : {message.from_user.first_name}\n\n༺ @ags_moviz༻\n\n🦋・‥☆Sᴜᴩᴩᴏʀᴛ Oᴜʀ Cʜᴀɴɴᴇʟ ☆‥・🦋\n╰┈➤・☆ @ags_movie ☆",
+                                                                                                       reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("━ • │▌║  Aᴅᴅ Mᴇ Tᴏ Uʀ Gʀᴏᴜᴩ  ║▌│ • ━", url=f'http://t.me/{temp.U_NAME}?startgroup=true')],[InlineKeyboardButton("✪ Sky Movies ✪", url="https://t.me/ags_moviz"), InlineKeyboardButton("✪ Sᴜᴩᴩᴏʀᴛ Gʀᴏᴜᴩ ✪", url="https://t.me/ags_movie"), InlineKeyboardButton("✪ Rᴇᴩᴏ ✪", url="https://t.me/ags_moviz")],[InlineKeyboardButton("╚»♥️Dᴇʟᴇᴛᴇ Tʜɪs Mᴇssᴀɢᴇ ♥️«╝", callback_data="close_data")]]))
                 await asyncio.sleep(12)
                 await l.delete()
                 if settings["spell_check"]:
