@@ -381,13 +381,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
         try:
             if AUTH_CHANNEL and not await is_subscribed(client, query):
-                await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
+                await query.answer(url=f"https://telegram.me/{temp.U_NAME}?start={ident}_{file_id}")
                 return
             elif settings['botpm']:
-                await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
+                await query.answer(url=f"https://telegram.me/{temp.U_NAME}?start={ident}_{file_id}")
                 return
             else:
-                g = short_url(f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
+                g = short_url(f"https://telegram.me/{temp.U_NAME}?start={ident}_{file_id}")
                 await client.send_photo(chat_id=query.from_user.id, photo='https://telegra.ph/file/6a6d1bd6b4b47ce195852.jpg', caption = f"<b>📕Nᴀᴍᴇ ➠ : <code>{files.file_name}</code> \n\n🔗Sɪᴢᴇ ➠ : {get_size(files.file_size)}</b>", 
                                           reply_markup=InlineKeyboardMarkup(
             [
