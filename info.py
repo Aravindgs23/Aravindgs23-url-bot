@@ -40,7 +40,7 @@ PM_AUTO_DELETE_TIME = environ.get("PM_AUTO_DELETE_TIME", "300")
 PM_AUTO_DELETE = environ.get("PM_AUTO_DELETE", True)
 
 # Others
-LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1002076606750' ))
+LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1002076606750'))
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', '')
 P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "False")), False)
 IMDB = is_enabled((environ.get('IMDB', "False")), False)
